@@ -2,9 +2,9 @@
 
 module ro_counter (
     input  logic clk_ref,
-    input  logic start,        //start measurement pulse
-    input  logic ro_in,        //async oscillator signal
-    input  int    window_cycles, //# clk_ref cycles
+    input  logic start,         //start measurement pulse
+    input  logic ro_in,         //async oscillator signal
+    input  int   window_cycles, //# clk_ref cycles
     output logic [31:0] count,
     output logic done
 );
@@ -40,4 +40,5 @@ module ro_counter (
             done <= 1'b0;
         end
     end
+    
 endmodule

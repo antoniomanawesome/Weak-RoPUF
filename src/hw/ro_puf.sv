@@ -27,7 +27,7 @@ module ro_puf (
     logic done_flags [RO_COUNT-1:0];
 
     generate
-        for (ri=0; ri<RO_COUNT; ri=ri+1) begin : l_counters
+        for (ri = 0; ri < RO_COUNT; ri++) begin : l_counters
             ro_counter rc (
                 .clk_ref(clk_ref),
                 .start(start),

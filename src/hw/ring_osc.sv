@@ -23,6 +23,7 @@ module ring_osc #(
             end
         end
     endgenerate
+    
     assign ro_out = node[STAGES-1];
 
 endmodule
