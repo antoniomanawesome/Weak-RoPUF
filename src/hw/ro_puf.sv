@@ -4,7 +4,7 @@
 module ro_puf (
     input logic clk_ref,
     input logic start,
-    output logic [63:0] puf_response,
+    output logic [63:0] puf_response
     //do we need to add UART or some interface to stream responses??
 );
     localparam RO_COUNT = 128;
@@ -40,8 +40,9 @@ module ro_puf (
     endgenerate
 
     //compare pairs (pair mapping: 0 vs 64, 1 vs 65, let's choose the mapping later)
+    genvar pi;
     generate
-        for (int pi = 0; pi < PAIRS; pi++) begin : l_cmp
+        for (pi = 0; pi < PAIRS; pi++) begin : l_cmp
             always_comb begin
                 puf_response[pi] = (counts[pi] > counts[pi + PAIRS]) ? 1'b1 : 1'b0;
             end
