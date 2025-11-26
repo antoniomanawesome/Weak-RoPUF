@@ -1,0 +1,807 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Wed Nov 26 13:37:24 2025
+| Host         : geo running 64-bit major release  (build 9200)
+| Command      : report_timing_summary -max_paths 10 -report_unconstrained -file top_level_timing_summary_routed.rpt -pb top_level_timing_summary_routed.pb -rpx top_level_timing_summary_routed.rpx -warn_on_violation
+| Design       : top_level
+| Device       : 7s50-csga324
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+| Design State : Routed
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+  Merge Timing Exceptions                    :  Yes
+  Inter-SLR Compensation                     :  Conservative
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+------------------------------------------------------------------------------------------------
+| Report Methodology
+| ------------------
+------------------------------------------------------------------------------------------------
+
+Rule       Severity          Description                  Violations  
+---------  ----------------  ---------------------------  ----------  
+TIMING-17  Critical Warning  Non-clocked sequential cell  1000        
+TIMING-23  Warning           Combinational loop found     128         
+
+Note: This report is based on the most recent report_methodology run and may not be up-to-date. Run report_methodology on the current design for the latest report.
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock (2144)
+2. checking constant_clock (0)
+3. checking pulse_width_clock (0)
+4. checking unconstrained_internal_endpoints (5248)
+5. checking no_input_delay (1)
+6. checking no_output_delay (16)
+7. checking multiple_clock (0)
+8. checking generated_clocks (0)
+9. checking loops (128)
+10. checking partial_input_delay (0)
+11. checking partial_output_delay (0)
+12. checking latch_loops (0)
+
+1. checking no_clock (2144)
+---------------------------
+ There are 2144 register/latch pins with no clock driven by root clock pin: CLK_100MHZ (HIGH)
+
+
+2. checking constant_clock (0)
+------------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock (0)
+---------------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints (5248)
+---------------------------------------------------
+ There are 5248 pins that are not constrained for maximum delay. (HIGH)
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay (1)
+------------------------------
+ There is 1 input port with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay (16)
+--------------------------------
+ There are 16 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock (0)
+------------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks (0)
+--------------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops (128)
+-----------------------
+ There are 128 combinational loops in the design. (HIGH)
+
+
+10. checking partial_input_delay (0)
+------------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay (0)
+-------------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops (0)
+----------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+        inf        0.000                      0                 5264          inf        0.000                      0                 5264           NA           NA                      NA                    NA  
+
+
+There are no user specified timing constraints.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| User Ignored Path Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+
+
+------------------------------------------------------------------------------------------------
+| Unconstrained Path Table
+| ------------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+(none)                                    
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  
+  To Clock:  
+
+Max Delay          5264 Endpoints
+Min Delay          5264 Endpoints
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 BTN[0]
+                            (input port)
+  Destination:            inst/l_counters[5].rc/sample_ticks_reg[29]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        16.707ns  (logic 3.008ns (18.007%)  route 13.699ns (81.993%))
+  Logic Levels:           10  (CARRY4=8 IBUF=1 LUT2=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    J2                                                0.000     0.000 f  BTN[0] (IN)
+                         net (fo=0)                   0.000     0.000    BTN[0]
+    J2                   IBUF (Prop_ibuf_I_O)         1.316     1.316 f  BTN_IBUF[0]_inst/O
+                         net (fo=3104, routed)       13.699    15.015    inst/l_counters[5].rc/BTN_IBUF[0]
+    SLICE_X7Y50          LUT2 (Prop_lut2_I1_O)        0.124    15.139 r  inst/l_counters[5].rc/sample_ticks[0]_i_13__23/O
+                         net (fo=1, routed)           0.000    15.139    inst/l_counters[5].rc/sample_ticks[0]_i_13__23_n_0
+    SLICE_X7Y50          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    15.689 r  inst/l_counters[5].rc/sample_ticks_reg[0]_i_2__17/CO[3]
+                         net (fo=1, routed)           0.000    15.689    inst/l_counters[5].rc/sample_ticks_reg[0]_i_2__17_n_0
+    SLICE_X7Y51          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    15.803 r  inst/l_counters[5].rc/sample_ticks_reg[4]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    15.803    inst/l_counters[5].rc/sample_ticks_reg[4]_i_1__17_n_0
+    SLICE_X7Y52          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    15.917 r  inst/l_counters[5].rc/sample_ticks_reg[8]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    15.917    inst/l_counters[5].rc/sample_ticks_reg[8]_i_1__17_n_0
+    SLICE_X7Y53          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.031 r  inst/l_counters[5].rc/sample_ticks_reg[12]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    16.031    inst/l_counters[5].rc/sample_ticks_reg[12]_i_1__17_n_0
+    SLICE_X7Y54          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.145 r  inst/l_counters[5].rc/sample_ticks_reg[16]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    16.145    inst/l_counters[5].rc/sample_ticks_reg[16]_i_1__17_n_0
+    SLICE_X7Y55          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.259 r  inst/l_counters[5].rc/sample_ticks_reg[20]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    16.259    inst/l_counters[5].rc/sample_ticks_reg[20]_i_1__17_n_0
+    SLICE_X7Y56          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.373 r  inst/l_counters[5].rc/sample_ticks_reg[24]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    16.373    inst/l_counters[5].rc/sample_ticks_reg[24]_i_1__17_n_0
+    SLICE_X7Y57          CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334    16.707 r  inst/l_counters[5].rc/sample_ticks_reg[28]_i_1__17/O[1]
+                         net (fo=1, routed)           0.000    16.707    inst/l_counters[5].rc/sample_ticks_reg[28]_i_1__17_n_6
+    SLICE_X7Y57          FDRE                                         r  inst/l_counters[5].rc/sample_ticks_reg[29]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 BTN[0]
+                            (input port)
+  Destination:            inst/l_counters[5].rc/sample_ticks_reg[31]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        16.686ns  (logic 2.987ns (17.904%)  route 13.699ns (82.096%))
+  Logic Levels:           10  (CARRY4=8 IBUF=1 LUT2=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    J2                                                0.000     0.000 f  BTN[0] (IN)
+                         net (fo=0)                   0.000     0.000    BTN[0]
+    J2                   IBUF (Prop_ibuf_I_O)         1.316     1.316 f  BTN_IBUF[0]_inst/O
+                         net (fo=3104, routed)       13.699    15.015    inst/l_counters[5].rc/BTN_IBUF[0]
+    SLICE_X7Y50          LUT2 (Prop_lut2_I1_O)        0.124    15.139 r  inst/l_counters[5].rc/sample_ticks[0]_i_13__23/O
+                         net (fo=1, routed)           0.000    15.139    inst/l_counters[5].rc/sample_ticks[0]_i_13__23_n_0
+    SLICE_X7Y50          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    15.689 r  inst/l_counters[5].rc/sample_ticks_reg[0]_i_2__17/CO[3]
+                         net (fo=1, routed)           0.000    15.689    inst/l_counters[5].rc/sample_ticks_reg[0]_i_2__17_n_0
+    SLICE_X7Y51          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    15.803 r  inst/l_counters[5].rc/sample_ticks_reg[4]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    15.803    inst/l_counters[5].rc/sample_ticks_reg[4]_i_1__17_n_0
+    SLICE_X7Y52          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    15.917 r  inst/l_counters[5].rc/sample_ticks_reg[8]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    15.917    inst/l_counters[5].rc/sample_ticks_reg[8]_i_1__17_n_0
+    SLICE_X7Y53          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.031 r  inst/l_counters[5].rc/sample_ticks_reg[12]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    16.031    inst/l_counters[5].rc/sample_ticks_reg[12]_i_1__17_n_0
+    SLICE_X7Y54          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.145 r  inst/l_counters[5].rc/sample_ticks_reg[16]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    16.145    inst/l_counters[5].rc/sample_ticks_reg[16]_i_1__17_n_0
+    SLICE_X7Y55          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.259 r  inst/l_counters[5].rc/sample_ticks_reg[20]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    16.259    inst/l_counters[5].rc/sample_ticks_reg[20]_i_1__17_n_0
+    SLICE_X7Y56          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.373 r  inst/l_counters[5].rc/sample_ticks_reg[24]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    16.373    inst/l_counters[5].rc/sample_ticks_reg[24]_i_1__17_n_0
+    SLICE_X7Y57          CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.313    16.686 r  inst/l_counters[5].rc/sample_ticks_reg[28]_i_1__17/O[3]
+                         net (fo=1, routed)           0.000    16.686    inst/l_counters[5].rc/sample_ticks_reg[28]_i_1__17_n_4
+    SLICE_X7Y57          FDRE                                         r  inst/l_counters[5].rc/sample_ticks_reg[31]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 BTN[0]
+                            (input port)
+  Destination:            inst/l_counters[5].rc/sample_ticks_reg[30]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        16.612ns  (logic 2.913ns (17.538%)  route 13.699ns (82.462%))
+  Logic Levels:           10  (CARRY4=8 IBUF=1 LUT2=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    J2                                                0.000     0.000 f  BTN[0] (IN)
+                         net (fo=0)                   0.000     0.000    BTN[0]
+    J2                   IBUF (Prop_ibuf_I_O)         1.316     1.316 f  BTN_IBUF[0]_inst/O
+                         net (fo=3104, routed)       13.699    15.015    inst/l_counters[5].rc/BTN_IBUF[0]
+    SLICE_X7Y50          LUT2 (Prop_lut2_I1_O)        0.124    15.139 r  inst/l_counters[5].rc/sample_ticks[0]_i_13__23/O
+                         net (fo=1, routed)           0.000    15.139    inst/l_counters[5].rc/sample_ticks[0]_i_13__23_n_0
+    SLICE_X7Y50          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    15.689 r  inst/l_counters[5].rc/sample_ticks_reg[0]_i_2__17/CO[3]
+                         net (fo=1, routed)           0.000    15.689    inst/l_counters[5].rc/sample_ticks_reg[0]_i_2__17_n_0
+    SLICE_X7Y51          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    15.803 r  inst/l_counters[5].rc/sample_ticks_reg[4]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    15.803    inst/l_counters[5].rc/sample_ticks_reg[4]_i_1__17_n_0
+    SLICE_X7Y52          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    15.917 r  inst/l_counters[5].rc/sample_ticks_reg[8]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    15.917    inst/l_counters[5].rc/sample_ticks_reg[8]_i_1__17_n_0
+    SLICE_X7Y53          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.031 r  inst/l_counters[5].rc/sample_ticks_reg[12]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    16.031    inst/l_counters[5].rc/sample_ticks_reg[12]_i_1__17_n_0
+    SLICE_X7Y54          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.145 r  inst/l_counters[5].rc/sample_ticks_reg[16]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    16.145    inst/l_counters[5].rc/sample_ticks_reg[16]_i_1__17_n_0
+    SLICE_X7Y55          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.259 r  inst/l_counters[5].rc/sample_ticks_reg[20]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    16.259    inst/l_counters[5].rc/sample_ticks_reg[20]_i_1__17_n_0
+    SLICE_X7Y56          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.373 r  inst/l_counters[5].rc/sample_ticks_reg[24]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    16.373    inst/l_counters[5].rc/sample_ticks_reg[24]_i_1__17_n_0
+    SLICE_X7Y57          CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.239    16.612 r  inst/l_counters[5].rc/sample_ticks_reg[28]_i_1__17/O[2]
+                         net (fo=1, routed)           0.000    16.612    inst/l_counters[5].rc/sample_ticks_reg[28]_i_1__17_n_5
+    SLICE_X7Y57          FDRE                                         r  inst/l_counters[5].rc/sample_ticks_reg[30]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 BTN[0]
+                            (input port)
+  Destination:            inst/l_counters[5].rc/sample_ticks_reg[28]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        16.596ns  (logic 2.897ns (17.459%)  route 13.699ns (82.541%))
+  Logic Levels:           10  (CARRY4=8 IBUF=1 LUT2=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    J2                                                0.000     0.000 f  BTN[0] (IN)
+                         net (fo=0)                   0.000     0.000    BTN[0]
+    J2                   IBUF (Prop_ibuf_I_O)         1.316     1.316 f  BTN_IBUF[0]_inst/O
+                         net (fo=3104, routed)       13.699    15.015    inst/l_counters[5].rc/BTN_IBUF[0]
+    SLICE_X7Y50          LUT2 (Prop_lut2_I1_O)        0.124    15.139 r  inst/l_counters[5].rc/sample_ticks[0]_i_13__23/O
+                         net (fo=1, routed)           0.000    15.139    inst/l_counters[5].rc/sample_ticks[0]_i_13__23_n_0
+    SLICE_X7Y50          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    15.689 r  inst/l_counters[5].rc/sample_ticks_reg[0]_i_2__17/CO[3]
+                         net (fo=1, routed)           0.000    15.689    inst/l_counters[5].rc/sample_ticks_reg[0]_i_2__17_n_0
+    SLICE_X7Y51          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    15.803 r  inst/l_counters[5].rc/sample_ticks_reg[4]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    15.803    inst/l_counters[5].rc/sample_ticks_reg[4]_i_1__17_n_0
+    SLICE_X7Y52          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    15.917 r  inst/l_counters[5].rc/sample_ticks_reg[8]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    15.917    inst/l_counters[5].rc/sample_ticks_reg[8]_i_1__17_n_0
+    SLICE_X7Y53          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.031 r  inst/l_counters[5].rc/sample_ticks_reg[12]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    16.031    inst/l_counters[5].rc/sample_ticks_reg[12]_i_1__17_n_0
+    SLICE_X7Y54          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.145 r  inst/l_counters[5].rc/sample_ticks_reg[16]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    16.145    inst/l_counters[5].rc/sample_ticks_reg[16]_i_1__17_n_0
+    SLICE_X7Y55          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.259 r  inst/l_counters[5].rc/sample_ticks_reg[20]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    16.259    inst/l_counters[5].rc/sample_ticks_reg[20]_i_1__17_n_0
+    SLICE_X7Y56          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.373 r  inst/l_counters[5].rc/sample_ticks_reg[24]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    16.373    inst/l_counters[5].rc/sample_ticks_reg[24]_i_1__17_n_0
+    SLICE_X7Y57          CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.223    16.596 r  inst/l_counters[5].rc/sample_ticks_reg[28]_i_1__17/O[0]
+                         net (fo=1, routed)           0.000    16.596    inst/l_counters[5].rc/sample_ticks_reg[28]_i_1__17_n_7
+    SLICE_X7Y57          FDRE                                         r  inst/l_counters[5].rc/sample_ticks_reg[28]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 BTN[0]
+                            (input port)
+  Destination:            inst/l_counters[5].rc/sample_ticks_reg[25]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        16.593ns  (logic 2.894ns (17.444%)  route 13.699ns (82.556%))
+  Logic Levels:           9  (CARRY4=7 IBUF=1 LUT2=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    J2                                                0.000     0.000 f  BTN[0] (IN)
+                         net (fo=0)                   0.000     0.000    BTN[0]
+    J2                   IBUF (Prop_ibuf_I_O)         1.316     1.316 f  BTN_IBUF[0]_inst/O
+                         net (fo=3104, routed)       13.699    15.015    inst/l_counters[5].rc/BTN_IBUF[0]
+    SLICE_X7Y50          LUT2 (Prop_lut2_I1_O)        0.124    15.139 r  inst/l_counters[5].rc/sample_ticks[0]_i_13__23/O
+                         net (fo=1, routed)           0.000    15.139    inst/l_counters[5].rc/sample_ticks[0]_i_13__23_n_0
+    SLICE_X7Y50          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    15.689 r  inst/l_counters[5].rc/sample_ticks_reg[0]_i_2__17/CO[3]
+                         net (fo=1, routed)           0.000    15.689    inst/l_counters[5].rc/sample_ticks_reg[0]_i_2__17_n_0
+    SLICE_X7Y51          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    15.803 r  inst/l_counters[5].rc/sample_ticks_reg[4]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    15.803    inst/l_counters[5].rc/sample_ticks_reg[4]_i_1__17_n_0
+    SLICE_X7Y52          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    15.917 r  inst/l_counters[5].rc/sample_ticks_reg[8]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    15.917    inst/l_counters[5].rc/sample_ticks_reg[8]_i_1__17_n_0
+    SLICE_X7Y53          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.031 r  inst/l_counters[5].rc/sample_ticks_reg[12]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    16.031    inst/l_counters[5].rc/sample_ticks_reg[12]_i_1__17_n_0
+    SLICE_X7Y54          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.145 r  inst/l_counters[5].rc/sample_ticks_reg[16]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    16.145    inst/l_counters[5].rc/sample_ticks_reg[16]_i_1__17_n_0
+    SLICE_X7Y55          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.259 r  inst/l_counters[5].rc/sample_ticks_reg[20]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    16.259    inst/l_counters[5].rc/sample_ticks_reg[20]_i_1__17_n_0
+    SLICE_X7Y56          CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334    16.593 r  inst/l_counters[5].rc/sample_ticks_reg[24]_i_1__17/O[1]
+                         net (fo=1, routed)           0.000    16.593    inst/l_counters[5].rc/sample_ticks_reg[24]_i_1__17_n_6
+    SLICE_X7Y56          FDRE                                         r  inst/l_counters[5].rc/sample_ticks_reg[25]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 BTN[0]
+                            (input port)
+  Destination:            inst/l_counters[5].rc/sample_ticks_reg[27]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        16.572ns  (logic 2.873ns (17.339%)  route 13.699ns (82.661%))
+  Logic Levels:           9  (CARRY4=7 IBUF=1 LUT2=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    J2                                                0.000     0.000 f  BTN[0] (IN)
+                         net (fo=0)                   0.000     0.000    BTN[0]
+    J2                   IBUF (Prop_ibuf_I_O)         1.316     1.316 f  BTN_IBUF[0]_inst/O
+                         net (fo=3104, routed)       13.699    15.015    inst/l_counters[5].rc/BTN_IBUF[0]
+    SLICE_X7Y50          LUT2 (Prop_lut2_I1_O)        0.124    15.139 r  inst/l_counters[5].rc/sample_ticks[0]_i_13__23/O
+                         net (fo=1, routed)           0.000    15.139    inst/l_counters[5].rc/sample_ticks[0]_i_13__23_n_0
+    SLICE_X7Y50          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    15.689 r  inst/l_counters[5].rc/sample_ticks_reg[0]_i_2__17/CO[3]
+                         net (fo=1, routed)           0.000    15.689    inst/l_counters[5].rc/sample_ticks_reg[0]_i_2__17_n_0
+    SLICE_X7Y51          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    15.803 r  inst/l_counters[5].rc/sample_ticks_reg[4]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    15.803    inst/l_counters[5].rc/sample_ticks_reg[4]_i_1__17_n_0
+    SLICE_X7Y52          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    15.917 r  inst/l_counters[5].rc/sample_ticks_reg[8]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    15.917    inst/l_counters[5].rc/sample_ticks_reg[8]_i_1__17_n_0
+    SLICE_X7Y53          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.031 r  inst/l_counters[5].rc/sample_ticks_reg[12]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    16.031    inst/l_counters[5].rc/sample_ticks_reg[12]_i_1__17_n_0
+    SLICE_X7Y54          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.145 r  inst/l_counters[5].rc/sample_ticks_reg[16]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    16.145    inst/l_counters[5].rc/sample_ticks_reg[16]_i_1__17_n_0
+    SLICE_X7Y55          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.259 r  inst/l_counters[5].rc/sample_ticks_reg[20]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    16.259    inst/l_counters[5].rc/sample_ticks_reg[20]_i_1__17_n_0
+    SLICE_X7Y56          CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.313    16.572 r  inst/l_counters[5].rc/sample_ticks_reg[24]_i_1__17/O[3]
+                         net (fo=1, routed)           0.000    16.572    inst/l_counters[5].rc/sample_ticks_reg[24]_i_1__17_n_4
+    SLICE_X7Y56          FDRE                                         r  inst/l_counters[5].rc/sample_ticks_reg[27]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 BTN[0]
+                            (input port)
+  Destination:            inst/l_counters[5].rc/sample_ticks_reg[26]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        16.498ns  (logic 2.799ns (16.969%)  route 13.699ns (83.031%))
+  Logic Levels:           9  (CARRY4=7 IBUF=1 LUT2=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    J2                                                0.000     0.000 f  BTN[0] (IN)
+                         net (fo=0)                   0.000     0.000    BTN[0]
+    J2                   IBUF (Prop_ibuf_I_O)         1.316     1.316 f  BTN_IBUF[0]_inst/O
+                         net (fo=3104, routed)       13.699    15.015    inst/l_counters[5].rc/BTN_IBUF[0]
+    SLICE_X7Y50          LUT2 (Prop_lut2_I1_O)        0.124    15.139 r  inst/l_counters[5].rc/sample_ticks[0]_i_13__23/O
+                         net (fo=1, routed)           0.000    15.139    inst/l_counters[5].rc/sample_ticks[0]_i_13__23_n_0
+    SLICE_X7Y50          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    15.689 r  inst/l_counters[5].rc/sample_ticks_reg[0]_i_2__17/CO[3]
+                         net (fo=1, routed)           0.000    15.689    inst/l_counters[5].rc/sample_ticks_reg[0]_i_2__17_n_0
+    SLICE_X7Y51          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    15.803 r  inst/l_counters[5].rc/sample_ticks_reg[4]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    15.803    inst/l_counters[5].rc/sample_ticks_reg[4]_i_1__17_n_0
+    SLICE_X7Y52          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    15.917 r  inst/l_counters[5].rc/sample_ticks_reg[8]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    15.917    inst/l_counters[5].rc/sample_ticks_reg[8]_i_1__17_n_0
+    SLICE_X7Y53          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.031 r  inst/l_counters[5].rc/sample_ticks_reg[12]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    16.031    inst/l_counters[5].rc/sample_ticks_reg[12]_i_1__17_n_0
+    SLICE_X7Y54          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.145 r  inst/l_counters[5].rc/sample_ticks_reg[16]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    16.145    inst/l_counters[5].rc/sample_ticks_reg[16]_i_1__17_n_0
+    SLICE_X7Y55          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.259 r  inst/l_counters[5].rc/sample_ticks_reg[20]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    16.259    inst/l_counters[5].rc/sample_ticks_reg[20]_i_1__17_n_0
+    SLICE_X7Y56          CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.239    16.498 r  inst/l_counters[5].rc/sample_ticks_reg[24]_i_1__17/O[2]
+                         net (fo=1, routed)           0.000    16.498    inst/l_counters[5].rc/sample_ticks_reg[24]_i_1__17_n_5
+    SLICE_X7Y56          FDRE                                         r  inst/l_counters[5].rc/sample_ticks_reg[26]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 BTN[0]
+                            (input port)
+  Destination:            inst/l_counters[5].rc/sample_ticks_reg[24]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        16.482ns  (logic 2.783ns (16.888%)  route 13.699ns (83.112%))
+  Logic Levels:           9  (CARRY4=7 IBUF=1 LUT2=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    J2                                                0.000     0.000 f  BTN[0] (IN)
+                         net (fo=0)                   0.000     0.000    BTN[0]
+    J2                   IBUF (Prop_ibuf_I_O)         1.316     1.316 f  BTN_IBUF[0]_inst/O
+                         net (fo=3104, routed)       13.699    15.015    inst/l_counters[5].rc/BTN_IBUF[0]
+    SLICE_X7Y50          LUT2 (Prop_lut2_I1_O)        0.124    15.139 r  inst/l_counters[5].rc/sample_ticks[0]_i_13__23/O
+                         net (fo=1, routed)           0.000    15.139    inst/l_counters[5].rc/sample_ticks[0]_i_13__23_n_0
+    SLICE_X7Y50          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    15.689 r  inst/l_counters[5].rc/sample_ticks_reg[0]_i_2__17/CO[3]
+                         net (fo=1, routed)           0.000    15.689    inst/l_counters[5].rc/sample_ticks_reg[0]_i_2__17_n_0
+    SLICE_X7Y51          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    15.803 r  inst/l_counters[5].rc/sample_ticks_reg[4]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    15.803    inst/l_counters[5].rc/sample_ticks_reg[4]_i_1__17_n_0
+    SLICE_X7Y52          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    15.917 r  inst/l_counters[5].rc/sample_ticks_reg[8]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    15.917    inst/l_counters[5].rc/sample_ticks_reg[8]_i_1__17_n_0
+    SLICE_X7Y53          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.031 r  inst/l_counters[5].rc/sample_ticks_reg[12]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    16.031    inst/l_counters[5].rc/sample_ticks_reg[12]_i_1__17_n_0
+    SLICE_X7Y54          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.145 r  inst/l_counters[5].rc/sample_ticks_reg[16]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    16.145    inst/l_counters[5].rc/sample_ticks_reg[16]_i_1__17_n_0
+    SLICE_X7Y55          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.259 r  inst/l_counters[5].rc/sample_ticks_reg[20]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    16.259    inst/l_counters[5].rc/sample_ticks_reg[20]_i_1__17_n_0
+    SLICE_X7Y56          CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.223    16.482 r  inst/l_counters[5].rc/sample_ticks_reg[24]_i_1__17/O[0]
+                         net (fo=1, routed)           0.000    16.482    inst/l_counters[5].rc/sample_ticks_reg[24]_i_1__17_n_7
+    SLICE_X7Y56          FDRE                                         r  inst/l_counters[5].rc/sample_ticks_reg[24]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 BTN[0]
+                            (input port)
+  Destination:            inst/l_counters[5].rc/sample_ticks_reg[21]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        16.479ns  (logic 2.780ns (16.873%)  route 13.699ns (83.127%))
+  Logic Levels:           8  (CARRY4=6 IBUF=1 LUT2=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    J2                                                0.000     0.000 f  BTN[0] (IN)
+                         net (fo=0)                   0.000     0.000    BTN[0]
+    J2                   IBUF (Prop_ibuf_I_O)         1.316     1.316 f  BTN_IBUF[0]_inst/O
+                         net (fo=3104, routed)       13.699    15.015    inst/l_counters[5].rc/BTN_IBUF[0]
+    SLICE_X7Y50          LUT2 (Prop_lut2_I1_O)        0.124    15.139 r  inst/l_counters[5].rc/sample_ticks[0]_i_13__23/O
+                         net (fo=1, routed)           0.000    15.139    inst/l_counters[5].rc/sample_ticks[0]_i_13__23_n_0
+    SLICE_X7Y50          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    15.689 r  inst/l_counters[5].rc/sample_ticks_reg[0]_i_2__17/CO[3]
+                         net (fo=1, routed)           0.000    15.689    inst/l_counters[5].rc/sample_ticks_reg[0]_i_2__17_n_0
+    SLICE_X7Y51          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    15.803 r  inst/l_counters[5].rc/sample_ticks_reg[4]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    15.803    inst/l_counters[5].rc/sample_ticks_reg[4]_i_1__17_n_0
+    SLICE_X7Y52          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    15.917 r  inst/l_counters[5].rc/sample_ticks_reg[8]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    15.917    inst/l_counters[5].rc/sample_ticks_reg[8]_i_1__17_n_0
+    SLICE_X7Y53          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.031 r  inst/l_counters[5].rc/sample_ticks_reg[12]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    16.031    inst/l_counters[5].rc/sample_ticks_reg[12]_i_1__17_n_0
+    SLICE_X7Y54          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.145 r  inst/l_counters[5].rc/sample_ticks_reg[16]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    16.145    inst/l_counters[5].rc/sample_ticks_reg[16]_i_1__17_n_0
+    SLICE_X7Y55          CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334    16.479 r  inst/l_counters[5].rc/sample_ticks_reg[20]_i_1__17/O[1]
+                         net (fo=1, routed)           0.000    16.479    inst/l_counters[5].rc/sample_ticks_reg[20]_i_1__17_n_6
+    SLICE_X7Y55          FDRE                                         r  inst/l_counters[5].rc/sample_ticks_reg[21]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 BTN[0]
+                            (input port)
+  Destination:            inst/l_counters[5].rc/sample_ticks_reg[23]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        16.458ns  (logic 2.759ns (16.767%)  route 13.699ns (83.233%))
+  Logic Levels:           8  (CARRY4=6 IBUF=1 LUT2=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    J2                                                0.000     0.000 f  BTN[0] (IN)
+                         net (fo=0)                   0.000     0.000    BTN[0]
+    J2                   IBUF (Prop_ibuf_I_O)         1.316     1.316 f  BTN_IBUF[0]_inst/O
+                         net (fo=3104, routed)       13.699    15.015    inst/l_counters[5].rc/BTN_IBUF[0]
+    SLICE_X7Y50          LUT2 (Prop_lut2_I1_O)        0.124    15.139 r  inst/l_counters[5].rc/sample_ticks[0]_i_13__23/O
+                         net (fo=1, routed)           0.000    15.139    inst/l_counters[5].rc/sample_ticks[0]_i_13__23_n_0
+    SLICE_X7Y50          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    15.689 r  inst/l_counters[5].rc/sample_ticks_reg[0]_i_2__17/CO[3]
+                         net (fo=1, routed)           0.000    15.689    inst/l_counters[5].rc/sample_ticks_reg[0]_i_2__17_n_0
+    SLICE_X7Y51          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    15.803 r  inst/l_counters[5].rc/sample_ticks_reg[4]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    15.803    inst/l_counters[5].rc/sample_ticks_reg[4]_i_1__17_n_0
+    SLICE_X7Y52          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    15.917 r  inst/l_counters[5].rc/sample_ticks_reg[8]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    15.917    inst/l_counters[5].rc/sample_ticks_reg[8]_i_1__17_n_0
+    SLICE_X7Y53          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.031 r  inst/l_counters[5].rc/sample_ticks_reg[12]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    16.031    inst/l_counters[5].rc/sample_ticks_reg[12]_i_1__17_n_0
+    SLICE_X7Y54          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.145 r  inst/l_counters[5].rc/sample_ticks_reg[16]_i_1__17/CO[3]
+                         net (fo=1, routed)           0.000    16.145    inst/l_counters[5].rc/sample_ticks_reg[16]_i_1__17_n_0
+    SLICE_X7Y55          CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.313    16.458 r  inst/l_counters[5].rc/sample_ticks_reg[20]_i_1__17/O[3]
+                         net (fo=1, routed)           0.000    16.458    inst/l_counters[5].rc/sample_ticks_reg[20]_i_1__17_n_4
+    SLICE_X7Y55          FDRE                                         r  inst/l_counters[5].rc/sample_ticks_reg[23]/D
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 inst/l_ro_inst[1].ro_i/node_inferred_i_1/O
+                            (internal pin)
+  Destination:            inst/l_counters[1].rc/ro_sync_0_reg/D
+  Path Group:             (none)
+  Path Type:              Min at Slow Process Corner
+  Data Path Delay:        0.000ns  (logic 0.000ns (0.000%)  route 0.000ns (0.000%))
+  Logic Levels:           0  
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X9Y95          LUT1                         0.000     0.000 r  inst/l_ro_inst[1].ro_i/node_inferred_i_1/O
+                         net (fo=2, routed)           0.000     0.000    inst/l_counters[1].rc/ro_out
+    SLICE_X9Y95          FDRE                                         r  inst/l_counters[1].rc/ro_sync_0_reg/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 inst/l_ro_inst[2].ro_i/node_inferred_i_1/O
+                            (internal pin)
+  Destination:            inst/l_counters[2].rc/ro_sync_0_reg/D
+  Path Group:             (none)
+  Path Type:              Min at Slow Process Corner
+  Data Path Delay:        0.000ns  (logic 0.000ns (0.000%)  route 0.000ns (0.000%))
+  Logic Levels:           0  
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X7Y67          LUT1                         0.000     0.000 r  inst/l_ro_inst[2].ro_i/node_inferred_i_1/O
+                         net (fo=2, routed)           0.000     0.000    inst/l_counters[2].rc/ro_out
+    SLICE_X7Y67          FDRE                                         r  inst/l_counters[2].rc/ro_sync_0_reg/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 inst/l_ro_inst[4].ro_i/node_inferred_i_1/O
+                            (internal pin)
+  Destination:            inst/l_counters[4].rc/ro_sync_0_reg/D
+  Path Group:             (none)
+  Path Type:              Min at Slow Process Corner
+  Data Path Delay:        0.000ns  (logic 0.000ns (0.000%)  route 0.000ns (0.000%))
+  Logic Levels:           0  
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X11Y75         LUT1                         0.000     0.000 r  inst/l_ro_inst[4].ro_i/node_inferred_i_1/O
+                         net (fo=2, routed)           0.000     0.000    inst/l_counters[4].rc/ro_out
+    SLICE_X11Y75         FDRE                                         r  inst/l_counters[4].rc/ro_sync_0_reg/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 inst/l_ro_inst[66].ro_i/node_inferred_i_1/O
+                            (internal pin)
+  Destination:            inst/l_counters[66].rc/ro_sync_0_reg/D
+  Path Group:             (none)
+  Path Type:              Min at Slow Process Corner
+  Data Path Delay:        0.000ns  (logic 0.000ns (0.000%)  route 0.000ns (0.000%))
+  Logic Levels:           0  
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X9Y73          LUT1                         0.000     0.000 r  inst/l_ro_inst[66].ro_i/node_inferred_i_1/O
+                         net (fo=2, routed)           0.000     0.000    inst/l_counters[66].rc/ro_out
+    SLICE_X9Y73          FDRE                                         r  inst/l_counters[66].rc/ro_sync_0_reg/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 inst/l_ro_inst[75].ro_i/node_inferred_i_1/O
+                            (internal pin)
+  Destination:            inst/l_counters[75].rc/ro_sync_0_reg/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.066ns  (logic 0.000ns (0.000%)  route 0.066ns (100.000%))
+  Logic Levels:           0  
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X15Y94         LUT1                         0.000     0.000 r  inst/l_ro_inst[75].ro_i/node_inferred_i_1/O
+                         net (fo=2, routed)           0.066     0.066    inst/l_counters[75].rc/ro_out
+    SLICE_X14Y94         FDRE                                         r  inst/l_counters[75].rc/ro_sync_0_reg/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 inst/l_ro_inst[9].ro_i/node_inferred_i_1/O
+                            (internal pin)
+  Destination:            inst/l_counters[9].rc/ro_sync_0_reg/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.100ns  (logic 0.000ns (0.000%)  route 0.100ns (100.000%))
+  Logic Levels:           0  
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X32Y84         LUT1                         0.000     0.000 r  inst/l_ro_inst[9].ro_i/node_inferred_i_1/O
+                         net (fo=2, routed)           0.100     0.100    inst/l_counters[9].rc/ro_out
+    SLICE_X31Y84         FDRE                                         r  inst/l_counters[9].rc/ro_sync_0_reg/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 inst/l_ro_inst[78].ro_i/node_inferred_i_1/O
+                            (internal pin)
+  Destination:            inst/l_counters[78].rc/ro_sync_0_reg/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.116ns  (logic 0.000ns (0.000%)  route 0.116ns (100.000%))
+  Logic Levels:           0  
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X5Y55          LUT1                         0.000     0.000 r  inst/l_ro_inst[78].ro_i/node_inferred_i_1/O
+                         net (fo=2, routed)           0.116     0.116    inst/l_counters[78].rc/ro_out
+    SLICE_X6Y55          FDRE                                         r  inst/l_counters[78].rc/ro_sync_0_reg/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 inst/l_ro_inst[13].ro_i/node_inferred_i_1/O
+                            (internal pin)
+  Destination:            inst/l_counters[13].rc/ro_sync_0_reg/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.127ns  (logic 0.000ns (0.000%)  route 0.127ns (100.000%))
+  Logic Levels:           0  
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X7Y73          LUT1                         0.000     0.000 r  inst/l_ro_inst[13].ro_i/node_inferred_i_1/O
+                         net (fo=2, routed)           0.127     0.127    inst/l_counters[13].rc/ro_out
+    SLICE_X7Y73          FDRE                                         r  inst/l_counters[13].rc/ro_sync_0_reg/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 inst/l_ro_inst[6].ro_i/node_inferred_i_1/O
+                            (internal pin)
+  Destination:            inst/l_counters[6].rc/ro_sync_0_reg/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.127ns  (logic 0.000ns (0.000%)  route 0.127ns (100.000%))
+  Logic Levels:           0  
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X10Y77         LUT1                         0.000     0.000 r  inst/l_ro_inst[6].ro_i/node_inferred_i_1/O
+                         net (fo=2, routed)           0.127     0.127    inst/l_counters[6].rc/ro_out
+    SLICE_X10Y77         FDRE                                         r  inst/l_counters[6].rc/ro_sync_0_reg/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 inst/l_ro_inst[65].ro_i/node_inferred_i_1/O
+                            (internal pin)
+  Destination:            inst/l_counters[65].rc/ro_sync_0_reg/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.129ns  (logic 0.000ns (0.000%)  route 0.129ns (100.000%))
+  Logic Levels:           0  
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X5Y93          LUT1                         0.000     0.000 r  inst/l_ro_inst[65].ro_i/node_inferred_i_1/O
+                         net (fo=2, routed)           0.129     0.129    inst/l_counters[65].rc/ro_out
+    SLICE_X4Y93          FDRE                                         r  inst/l_counters[65].rc/ro_sync_0_reg/D
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+
