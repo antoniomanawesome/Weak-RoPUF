@@ -1,10 +1,15 @@
 # # URBANA BOARD CONSTRAINTS V2I1 1/3/2023 
 # # clk input is from the 100 MHz oscillator on Urbana board
-# #create_clock -period 10.000 -name gclk [get_ports clk_100MHz]
+
 set_property -dict {PACKAGE_PIN N15 IOSTANDARD LVCMOS33} [get_ports {CLK_100MHZ}]
+create_clock -period 10.000 -name CLK_100MHZ [get_ports {CLK_100MHZ}]
 
 # For genvar combinatorial loops
 set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets -hierarchical *node*]
+
+# lock the current placement so vivado doesn't relocate the ROs (PLS VIVADO PLS)
+set_property LOCKED true [get_pblocks pblock_puf_*]
+
 
 # # Set Bank 0 voltage
 # set_property CFGBVS VCCO [current_design]
@@ -140,7 +145,7 @@ set_property -dict {PACKAGE_PIN J2 IOSTANDARD LVCMOS25} [get_ports {BTN[0]}]
 # set_property -dict {PACKAGE_PIN E13 IOSTANDARD LVCMOS33} [get_ports {BLE_UART_RXD}]
 # set_property -dict {PACKAGE_PIN H15 IOSTANDARD LVCMOS33} [get_ports {BLE_UART_RTS}]
 # set_property -dict {PACKAGE_PIN F13 IOSTANDARD LVCMOS33} [get_ports {BLE_UART_CTS}]
-# set_property -dict {PACKAGE_PIN B16 IOSTANDARD LVCMOS33} [get_ports {UART_TXD}]
+set_property -dict {PACKAGE_PIN B16 IOSTANDARD LVCMOS33} [get_ports {UART_TXD}]
 # set_property -dict {PACKAGE_PIN A16 IOSTANDARD LVCMOS33} [get_ports {UART_RXD}]
 
 # #QSPI signals

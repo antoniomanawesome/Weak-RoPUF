@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7s50csga324-1" LaunchTime="1764182207">
+<GenRun Id="impl_1" LaunchPart="xc7s50csga324-1" LaunchTime="1765232085">
   <File Type="PA-TCL" Name="top_level.tcl"/>
   <File Type="REPORTS-TCL" Name="top_level_reports.tcl"/>
   <File Type="INIT-TIMING" Name="top_level_timing_summary_init.rpt"/>
   <File Type="OPT-DCP" Name="top_level_opt.dcp"/>
   <File Type="OPT-DRC" Name="top_level_drc_opted.rpt"/>
+  <File Type="OPT-UTIL" Name="top_level_utilization_opted.rpt"/>
+  <File Type="OPT-UTIL-PB" Name="top_level_utilization_opted.pb"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="top_level_methodology_drc_opted.rpt"/>
   <File Type="OPT-HWDEF" Name="top_level.hwdef"/>
   <File Type="OPT-TIMING" Name="top_level_timing_summary_opted.rpt"/>
@@ -30,6 +32,8 @@
   <File Type="ROUTE-ERROR-DCP" Name="top_level_routed_error.dcp"/>
   <File Type="ROUTE-DCP" Name="top_level_routed.dcp"/>
   <File Type="ROUTE-BLACKBOX-DCP" Name="top_level_routed_bb.dcp"/>
+  <File Type="ROUTE-UTIL" Name="top_level_utilization_routed.rpt"/>
+  <File Type="ROUTE-UTIL-PB" Name="top_level_utilization_routed.pb"/>
   <File Type="ROUTE-DRC" Name="top_level_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="top_level_drc_routed.pb"/>
   <File Type="ROUTE-DRC-RPX" Name="top_level_drc_routed.rpx"/>
@@ -52,12 +56,12 @@
   <File Type="ROUTE-RQS-PB" Name="top_level_rqs_routed.pb"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="top_level_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="top_level_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="ro_counter_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="ro_counter_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="ro_counter_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="ro_counter_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="ro_counter_bus_skew_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="ro_counter_bus_skew_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="top_level_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="top_level_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="top_level_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="top_level_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="top_level_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="top_level_bus_skew_postroute_physopted.rpx"/>
   <File Type="BG-BIT" Name="top_level.bit"/>
   <File Type="BG-BIN" Name="top_level.bin"/>
   <File Type="BITSTR-MSK" Name="top_level.msk"/>
@@ -71,8 +75,31 @@
   <File Type="RCFI_FILE" Name="top_level.rcfi"/>
   <File Type="CFI_FILE" Name="top_level.cfi"/>
   <File Type="RNPI_FILE" Name="top_level.rnpi"/>
+  <File Type="RCDO-FILE" Name="top_level.rcdo"/>
+  <File Type="MARKER-RNPI-FILE" Name="top_level_markers.rnpi"/>
+  <File Type="MARKER-RCDO-FILE" Name="top_level_markers.rcdo"/>
+  <File Type="BOOT_RNPI_FILE" Name="top_level_boot.rnpi"/>
+  <File Type="BOOT_MARKER_RNPI_FILE" Name="top_level_boot_markers.rnpi"/>
+  <File Type="PL_RNPI_FILE" Name="top_level_pld.rnpi"/>
+  <File Type="PL_MARKER_RNPI_FILE" Name="top_level_pld_markers.rnpi"/>
+  <File Type="PL_MASK_RNPI_FILE" Name="top_level_pld_mask.rnpi"/>
+  <File Type="PL_SHUTDOWN_RNPI_FILE" Name="top_level_pld_shutdown.rnpi"/>
+  <File Type="PL_UNMASK_RNPI_FILE" Name="top_level_pld_unmask.rnpi"/>
+  <File Type="PL-RCDO-FILE" Name="top_level_pld.rcdo"/>
+  <File Type="PL-CLEAR-RCDO-FILE" Name="top_level_pld_clear.rcdo"/>
+  <File Type="PL_MARKER_RCDO_FILE" Name="top_level_pld_markers.rcdo"/>
+  <File Type="PL_MASK_RCDO_FILE" Name="top_level_pld_mask.rcdo"/>
+  <File Type="PL_UNMASK_MARKER_RCDO_FILE" Name="top_level_pld_unmask_markers.rcdo"/>
+  <File Type="PL_UNMASK_RCDO_FILE" Name="top_level_pld_unmask.rcdo"/>
   <File Type="NPI_FILE" Name="top_level.npi"/>
   <File Type="RBD_FILE" Name="top_level.rbd"/>
+  <File Type="MMI-FILE" Name="top_level.mmi"/>
+  <File Type="BIF-FILE" Name="top_level.bif"/>
+  <File Type="BOOT-BIF-FILE" Name="top_level_boot.bif"/>
+  <File Type="PL-BIF-FILE" Name="top_level_pld.bif"/>
+  <File Type="LTX-FILE" Name="top_level.ltx"/>
+  <File Type="BOOT-LTX-FILE" Name="top_level_boot.ltx"/>
+  <File Type="PL-LTX-FILE" Name="top_level_pld.ltx"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
   <File Type="BITSTR-LTX" Name="top_level.ltx"/>
   <File Type="BITSTR-SYSDEF" Name="top_level.sysdef"/>
@@ -107,6 +134,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/../src/hw/uart_tx.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PPRDIR/../src/hw/top_level.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -130,6 +164,13 @@
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/../src/hw/puf_pblocks.tcl">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
@@ -143,6 +184,8 @@
         <Attr Name="UsedInSteps" Val="synth_1"/>
         <Attr Name="UsedInSteps" Val="synth_1_copy_1"/>
         <Attr Name="UsedInSteps" Val="synth_1_copy_2"/>
+        <Attr Name="UsedInSteps" Val="synth_1_copy_3"/>
+        <Attr Name="UsedInSteps" Val="synth_1_copy_4"/>
         <Attr Name="AutoDcp" Val="1"/>
       </FileInfo>
     </File>
@@ -151,9 +194,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024">
-      <Desc>Default settings for Implementation.</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024"/>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>

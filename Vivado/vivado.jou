@@ -1,118 +1,59 @@
 #-----------------------------------------------------------
-# Vivado v2024.2 (64-bit)
-# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
-# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
-# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Wed Nov 26 11:02:38 2025
-# Process ID         : 15292
-# Current directory  : C:/Users/gsfei/OneDrive/Desktop/Weak-RoPUF/Vivado
-# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent20076 C:\Users\gsfei\OneDrive\Desktop\Weak-RoPUF\Vivado\Vivado.xpr
-# Log file           : C:/Users/gsfei/OneDrive/Desktop/Weak-RoPUF/Vivado/vivado.log
-# Journal file       : C:/Users/gsfei/OneDrive/Desktop/Weak-RoPUF/Vivado\vivado.jou
-# Running On         : geo
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Mon Dec  8 12:15:34 2025
+# Process ID         : 6108
+# Current directory  : D:/Github/Weak-RoPUF/Vivado
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent3096 D:\Github\Weak-RoPUF\Vivado\Vivado.xpr
+# Log file           : D:/Github/Weak-RoPUF/Vivado/vivado.log
+# Journal file       : D:/Github/Weak-RoPUF/Vivado\vivado.jou
+# Running On         : DESKTOP-VG1816S
 # Platform           : Windows Server 2016 or Windows 10
-# Operating System   : 26200
-# Processor Detail   : AMD Ryzen AI 9 HX 375 w/ Radeon 890M           
-# CPU Frequency      : 1996 MHz
-# CPU Physical cores : 12
-# CPU Logical cores  : 24
-# Host memory        : 33620 MB
+# Operating System   : 22631
+# Processor Detail   : AMD Ryzen 7 7800X3D 8-Core Processor           
+# CPU Frequency      : 4200 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 33482 MB
 # Swap memory        : 2147 MB
-# Total Virtual      : 35768 MB
-# Available Virtual  : 21718 MB
+# Total Virtual      : 35630 MB
+# Available Virtual  : 23582 MB
 #-----------------------------------------------------------
 start_gui
-open_project C:/Users/gsfei/OneDrive/Desktop/Weak-RoPUF/Vivado/Vivado.xpr
+open_project D:/Github/Weak-RoPUF/Vivado/Vivado.xpr
 update_compile_order -fileset sources_1
-xhub::refresh_catalog [xhub::get_xstores xilinx_board_store]
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+copy_run -name synth_1_copy_3 [get_runs synth_1] 
 set_property part xc7s50csga324-2 [current_project]
-set_property top {} [current_fileset]
-open_bd_design {C:/Users/gsfei/OneDrive/Desktop/Weak-RoPUF/Vivado/Vivado.srcs/sources_1/bd/design_1/design_1.bd}
-delete_bd_objs [get_bd_intf_nets processing_system7_0_DDR] [get_bd_intf_nets processing_system7_0_FIXED_IO] [get_bd_cells processing_system7_0]
-delete_bd_objs [get_bd_intf_ports FIXED_IO]
-delete_bd_objs [get_bd_intf_ports DDR]
-remove_files  C:/Users/gsfei/OneDrive/Desktop/Weak-RoPUF/Vivado/Vivado.srcs/sources_1/bd/design_1/design_1.bd
-create_bd_design "design_1"
-startgroup
-create_bd_cell -type ip -vlnv xilinx.com:ip:microblaze:11.0 microblaze_0
-endgroup
-apply_bd_automation -rule xilinx.com:bd_rule:microblaze -config { all {1} axi_intc {0} axi_periph {Enabled} cache {None} clk {New Clocking Wizard} compress {1} cores {1} debug_module {Debug Only} disable {1} ecc {None} local_mem {16KB} preset {None}}  [get_bd_cells microblaze_0]
-startgroup
-delete_bd_objs [get_bd_intf_nets microblaze_0_ilmb_1] [get_bd_intf_nets microblaze_0_debug] [get_bd_intf_nets microblaze_0_dlmb_1]
-delete_bd_objs [get_bd_nets microblaze_0_Clk] [get_bd_nets rst_clk_wiz_1_100M_bus_struct_reset] [get_bd_nets clk_wiz_1_locked] [get_bd_nets rst_clk_wiz_1_100M_mb_reset] [get_bd_nets mdm_1_debug_sys_rst]
-delete_bd_objs [get_bd_cells microblaze_0_local_memory]
-delete_bd_objs [get_bd_cells clk_wiz_1] [get_bd_cells mdm_1] [get_bd_cells microblaze_0] [get_bd_cells rst_clk_wiz_1_100M]
-endgroup
-set_property part xc7s25csga324-1 [current_project]
-remove_files  C:/Users/gsfei/OneDrive/Desktop/Weak-RoPUF/Vivado/Vivado.srcs/sources_1/bd/design_1/design_1.bd
-add_files -fileset constrs_1 -norecurse C:/Users/gsfei/Downloads/Urbana.xdc
-import_files -fileset constrs_1 C:/Users/gsfei/Downloads/Urbana.xdc
-create_bd_design "design_1"
-startgroup
-create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_0
-endgroup
-delete_bd_objs [get_bd_cells clk_wiz_0]
-create_bd_port -dir I -type clk -freq_hz 100000000 CLK_100MHZ
-delete_bd_objs [get_bd_ports CLK_100MHZ]
-remove_files  C:/Users/gsfei/OneDrive/Desktop/Weak-RoPUF/Vivado/Vivado.srcs/sources_1/bd/design_1/design_1.bd
-add_files -norecurse -scan_for_includes {C:/Users/gsfei/OneDrive/Desktop/Weak-RoPUF/src/hw/ring_osc.sv C:/Users/gsfei/OneDrive/Desktop/Weak-RoPUF/src/hw/ro_counter.sv C:/Users/gsfei/OneDrive/Desktop/Weak-RoPUF/src/hw/top_level.sv C:/Users/gsfei/OneDrive/Desktop/Weak-RoPUF/src/hw/ro_puf.sv}
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-launch_runs synth_1 -jobs 24
-wait_on_run synth_1
-launch_runs impl_1 -jobs 24
-wait_on_run impl_1
-launch_runs impl_1 -to_step write_bitstream -jobs 24
-wait_on_run impl_1
-reset_run impl_1 -prev_step 
-launch_runs impl_1 -to_step write_bitstream -jobs 24
-wait_on_run impl_1
-reset_run impl_1 -prev_step 
-launch_runs impl_1 -to_step write_bitstream -jobs 24
-wait_on_run impl_1
 reset_run synth_1
-launch_runs synth_1 -jobs 24
+launch_runs synth_1 -jobs 8
 wait_on_run synth_1
-launch_runs impl_1 -jobs 24
-wait_on_run impl_1
-launch_runs impl_1 -to_step write_bitstream -jobs 24
-wait_on_run impl_1
-reset_run synth_1
-launch_runs synth_1 -jobs 24
-wait_on_run synth_1
-launch_runs impl_1 -jobs 24
-wait_on_run impl_1
-launch_runs impl_1 -to_step write_bitstream -jobs 24
-wait_on_run impl_1
-reset_run synth_1
-launch_runs synth_1 -jobs 24
-wait_on_run synth_1
-reset_run synth_1
-launch_runs synth_1 -jobs 24
-wait_on_run synth_1
-launch_runs impl_1 -jobs 24
-wait_on_run impl_1
-launch_runs impl_1 -to_step write_bitstream -jobs 24
-wait_on_run impl_1
-copy_run -name synth_1_copy_1 [get_runs synth_1] 
-set_property part xc7s25csga324-2 [current_project]
-reset_run synth_1
-launch_runs synth_1 -jobs 24
-wait_on_run synth_1
-copy_run -name synth_1_copy_2 [get_runs synth_1] 
+copy_run -name synth_1_copy_4 [get_runs synth_1] 
 set_property part xc7s50csga324-1 [current_project]
 reset_run synth_1
-launch_runs synth_1 -jobs 24
+launch_runs synth_1 -jobs 8
 wait_on_run synth_1
-launch_runs impl_1 -jobs 24
+launch_runs impl_1 -jobs 8
 wait_on_run impl_1
-launch_runs impl_1 -to_step write_bitstream -jobs 24
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_runs impl_1 -jobs 8
 wait_on_run impl_1
-open_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
 open_hw_manager
 connect_hw_server -allow_non_jtag
 disconnect_hw_server localhost:3121
 connect_hw_server -allow_non_jtag
-disconnect_hw_server localhost:3121
-connect_hw_server -allow_non_jtag
-disconnect_hw_server localhost:3121

@@ -1,8 +1,8 @@
-Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-| Date         : Wed Nov 26 13:37:08 2025
-| Host         : geo running 64-bit major release  (build 9200)
+| Tool Version : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
+| Date         : Mon Dec  8 17:15:10 2025
+| Host         : DESKTOP-VG1816S running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file top_level_control_sets_placed.rpt
 | Design       : top_level
 | Device       : xc7s50
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    66 |
-|    Minimum number of control sets                        |    66 |
+| Total control sets                                       |    69 |
+|    Minimum number of control sets                        |    69 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |     0 |
+| Unused register locations in slices containing registers |    14 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,12 +39,12 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    66 |
+| Total control sets |    69 |
 | >= 0 to < 4        |     0 |
 | >= 4 to < 6        |     0 |
 | >= 6 to < 8        |     0 |
-| >= 8 to < 10       |     0 |
-| >= 10 to < 12      |     0 |
+| >= 8 to < 10       |     2 |
+| >= 10 to < 12      |     1 |
 | >= 12 to < 14      |     0 |
 | >= 14 to < 16      |     0 |
 | >= 16              |    66 |
@@ -58,10 +58,10 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              64 |           45 |
+| No           | No                    | No                     |              71 |           51 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              32 |           32 |
-| Yes          | No                    | No                     |            1024 |          256 |
+| No           | Yes                   | No                     |              42 |           35 |
+| Yes          | No                    | No                     |            1041 |          262 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |            1024 |          256 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
@@ -70,75 +70,78 @@ Table of Contents
 4. Detailed Control Set Information
 -----------------------------------
 
-+-----------------------+----------------------------------------------------+------------------+------------------+----------------+--------------+
-|      Clock Signal     |                    Enable Signal                   | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
-+-----------------------+----------------------------------------------------+------------------+------------------+----------------+--------------+
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[64].rc/sample_ticks[0]_i_1__6_n_0  |                  |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG |                                                    | BTN_IBUF[0]      |               32 |             32 |         1.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[65].rc/count[0]_i_1__5_n_0         | BTN_IBUF[0]      |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[11].rc/count[0]_i_1__11_n_0        | BTN_IBUF[0]      |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[11].rc/sample_ticks[0]_i_1__11_n_0 |                  |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[5].rc/count[0]_i_1__17_n_0         | BTN_IBUF[0]      |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[5].rc/sample_ticks[0]_i_1__17_n_0  |                  |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[64].rc/count[0]_i_1__6_n_0         | BTN_IBUF[0]      |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[2].rc/sample_ticks[0]_i_1__20_n_0  |                  |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[0].rc/count[0]_i_1__26_n_0         | BTN_IBUF[0]      |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[0].rc/sample_ticks[0]_i_1__26_n_0  |                  |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[10].rc/count[0]_i_1__12_n_0        | BTN_IBUF[0]      |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[10].rc/sample_ticks[0]_i_1__12_n_0 |                  |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[1].rc/count[0]_i_1__21_n_0         | BTN_IBUF[0]      |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[1].rc/sample_ticks[0]_i_1__21_n_0  |                  |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[2].rc/count[0]_i_1__20_n_0         | BTN_IBUF[0]      |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[73].rc/sample_ticks[0]_i_1__23_n_0 |                  |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[3].rc/count[0]_i_1__19_n_0         | BTN_IBUF[0]      |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[3].rc/sample_ticks[0]_i_1__19_n_0  |                  |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[4].rc/count[0]_i_1__18_n_0         | BTN_IBUF[0]      |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[4].rc/sample_ticks[0]_i_1__18_n_0  |                  |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[65].rc/sample_ticks[0]_i_1__5_n_0  |                  |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[66].rc/count[0]_i_1__4_n_0         | BTN_IBUF[0]      |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[66].rc/sample_ticks[0]_i_1__4_n_0  |                  |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[67].rc/count[0]_i_1__3_n_0         | BTN_IBUF[0]      |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[67].rc/sample_ticks[0]_i_1__3_n_0  |                  |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[68].rc/count[0]_i_1__2_n_0         | BTN_IBUF[0]      |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[68].rc/sample_ticks[0]_i_1__2_n_0  |                  |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[78].rc/count[0]_i_1__29_n_0        | BTN_IBUF[0]      |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[75].rc/count[0]_i_1__25_n_0        | BTN_IBUF[0]      |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[75].rc/sample_ticks[0]_i_1__25_n_0 |                  |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[76].rc/count[0]_i_1__27_n_0        | BTN_IBUF[0]      |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[76].rc/sample_ticks[0]_i_1__27_n_0 |                  |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[77].rc/count[0]_i_1__28_n_0        | BTN_IBUF[0]      |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[77].rc/sample_ticks[0]_i_1__28_n_0 |                  |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[78].rc/sample_ticks[0]_i_1__29_n_0 |                  |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[79].rc/count[0]_i_1__30_n_0        | BTN_IBUF[0]      |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[79].rc/sample_ticks[0]_i_1__30_n_0 |                  |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[7].rc/count[0]_i_1__15_n_0         | BTN_IBUF[0]      |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[7].rc/sample_ticks[0]_i_1__15_n_0  |                  |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[8].rc/count[0]_i_1__14_n_0         | BTN_IBUF[0]      |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[8].rc/sample_ticks[0]_i_1__14_n_0  |                  |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[15].rc/sample_ticks[0]_i_1__7_n_0  |                  |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[13].rc/count[0]_i_1__9_n_0         | BTN_IBUF[0]      |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[13].rc/sample_ticks[0]_i_1__9_n_0  |                  |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[9].rc/count[0]_i_1__13_n_0         | BTN_IBUF[0]      |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[9].rc/sample_ticks[0]_i_1__13_n_0  |                  |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[14].rc/count[0]_i_1__8_n_0         | BTN_IBUF[0]      |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[14].rc/sample_ticks[0]_i_1__8_n_0  |                  |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[15].rc/count[0]_i_1__7_n_0         | BTN_IBUF[0]      |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[69].rc/count[0]_i_1__1_n_0         | BTN_IBUF[0]      |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[69].rc/sample_ticks[0]_i_1__1_n_0  |                  |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[6].rc/count[0]_i_1__16_n_0         | BTN_IBUF[0]      |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[6].rc/sample_ticks[0]_i_1__16_n_0  |                  |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[70].rc/count[0]_i_1__0_n_0         | BTN_IBUF[0]      |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[70].rc/sample_ticks[0]_i_1__0_n_0  |                  |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[71].rc/count[0]_i_1_n_0            | BTN_IBUF[0]      |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[71].rc/sample_ticks[0]_i_1_n_0     |                  |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[74].rc/count[0]_i_1__24_n_0        | BTN_IBUF[0]      |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[74].rc/sample_ticks[0]_i_1__24_n_0 |                  |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[12].rc/count[0]_i_1__10_n_0        | BTN_IBUF[0]      |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[12].rc/sample_ticks[0]_i_1__10_n_0 |                  |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[72].rc/count[0]_i_1__22_n_0        | BTN_IBUF[0]      |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[72].rc/sample_ticks[0]_i_1__22_n_0 |                  |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[73].rc/count[0]_i_1__23_n_0        | BTN_IBUF[0]      |                8 |             32 |         4.00 |
-|  CLK_100MHZ_IBUF_BUFG |                                                    |                  |               45 |             64 |         1.42 |
-+-----------------------+----------------------------------------------------+------------------+------------------+----------------+--------------+
++-----------------------+----------------------------------------------------+------------------------------+------------------+----------------+--------------+
+|      Clock Signal     |                    Enable Signal                   |       Set/Reset Signal       | Slice Load Count | Bel Load Count | Bels / Slice |
++-----------------------+----------------------------------------------------+------------------------------+------------------+----------------+--------------+
+|  CLK_100MHZ_IBUF_BUFG | uart_inst/data_buf_0                               |                              |                2 |              8 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | uart_inst/E[0]                                     |                              |                4 |              9 |         2.25 |
+|  CLK_100MHZ_IBUF_BUFG |                                                    | uart_inst/clk_cnt[9]_i_1_n_0 |                3 |             10 |         3.33 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[11].rc/sample_ticks[0]_i_1__11_n_0 |                              |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG |                                                    | BTN_IBUF[0]                  |               32 |             32 |         1.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[65].rc/sample_ticks[0]_i_1__5_n_0  |                              |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[64].rc/count[0]_i_1__6_n_0         | BTN_IBUF[0]                  |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[64].rc/sample_ticks[0]_i_1__6_n_0  |                              |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[65].rc/count[0]_i_1__5_n_0         | BTN_IBUF[0]                  |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[11].rc/count[0]_i_1__11_n_0        | BTN_IBUF[0]                  |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[66].rc/sample_ticks[0]_i_1__4_n_0  |                              |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[5].rc/count[0]_i_1__17_n_0         | BTN_IBUF[0]                  |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[5].rc/sample_ticks[0]_i_1__17_n_0  |                              |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[0].rc/count[0]_i_1__26_n_0         | BTN_IBUF[0]                  |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[0].rc/sample_ticks[0]_i_1__26_n_0  |                              |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[10].rc/count[0]_i_1__12_n_0        | BTN_IBUF[0]                  |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[10].rc/sample_ticks[0]_i_1__12_n_0 |                              |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[66].rc/count[0]_i_1__4_n_0         | BTN_IBUF[0]                  |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[4].rc/sample_ticks[0]_i_1__18_n_0  |                              |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[67].rc/count[0]_i_1__3_n_0         | BTN_IBUF[0]                  |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[67].rc/sample_ticks[0]_i_1__3_n_0  |                              |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[68].rc/count[0]_i_1__2_n_0         | BTN_IBUF[0]                  |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[68].rc/sample_ticks[0]_i_1__2_n_0  |                              |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[69].rc/count[0]_i_1__1_n_0         | BTN_IBUF[0]                  |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[14].rc/count[0]_i_1__8_n_0         | BTN_IBUF[0]                  |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[14].rc/sample_ticks[0]_i_1__8_n_0  |                              |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[15].rc/count[0]_i_1__7_n_0         | BTN_IBUF[0]                  |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[15].rc/sample_ticks[0]_i_1__7_n_0  |                              |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[1].rc/count[0]_i_1__21_n_0         | BTN_IBUF[0]                  |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[1].rc/sample_ticks[0]_i_1__21_n_0  |                              |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[2].rc/count[0]_i_1__20_n_0         | BTN_IBUF[0]                  |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[2].rc/sample_ticks[0]_i_1__20_n_0  |                              |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[12].rc/count[0]_i_1__10_n_0        | BTN_IBUF[0]                  |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[12].rc/sample_ticks[0]_i_1__10_n_0 |                              |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[72].rc/count[0]_i_1__22_n_0        | BTN_IBUF[0]                  |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[72].rc/sample_ticks[0]_i_1__22_n_0 |                              |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[73].rc/count[0]_i_1__23_n_0        | BTN_IBUF[0]                  |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[73].rc/sample_ticks[0]_i_1__23_n_0 |                              |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[74].rc/count[0]_i_1__24_n_0        | BTN_IBUF[0]                  |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[74].rc/sample_ticks[0]_i_1__24_n_0 |                              |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[75].rc/count[0]_i_1__25_n_0        | BTN_IBUF[0]                  |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[75].rc/sample_ticks[0]_i_1__25_n_0 |                              |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[76].rc/count[0]_i_1__27_n_0        | BTN_IBUF[0]                  |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[76].rc/sample_ticks[0]_i_1__27_n_0 |                              |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[7].rc/count[0]_i_1__15_n_0         | BTN_IBUF[0]                  |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[77].rc/count[0]_i_1__28_n_0        | BTN_IBUF[0]                  |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[77].rc/sample_ticks[0]_i_1__28_n_0 |                              |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[78].rc/count[0]_i_1__29_n_0        | BTN_IBUF[0]                  |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[78].rc/sample_ticks[0]_i_1__29_n_0 |                              |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[79].rc/count[0]_i_1__30_n_0        | BTN_IBUF[0]                  |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[79].rc/sample_ticks[0]_i_1__30_n_0 |                              |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[7].rc/sample_ticks[0]_i_1__15_n_0  |                              |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[8].rc/count[0]_i_1__14_n_0         | BTN_IBUF[0]                  |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[8].rc/sample_ticks[0]_i_1__14_n_0  |                              |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[13].rc/count[0]_i_1__9_n_0         | BTN_IBUF[0]                  |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[13].rc/sample_ticks[0]_i_1__9_n_0  |                              |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[9].rc/count[0]_i_1__13_n_0         | BTN_IBUF[0]                  |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[9].rc/sample_ticks[0]_i_1__13_n_0  |                              |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[69].rc/sample_ticks[0]_i_1__1_n_0  |                              |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[6].rc/count[0]_i_1__16_n_0         | BTN_IBUF[0]                  |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[6].rc/sample_ticks[0]_i_1__16_n_0  |                              |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[70].rc/count[0]_i_1__0_n_0         | BTN_IBUF[0]                  |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[70].rc/sample_ticks[0]_i_1__0_n_0  |                              |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[71].rc/count[0]_i_1_n_0            | BTN_IBUF[0]                  |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[71].rc/sample_ticks[0]_i_1_n_0     |                              |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[3].rc/count[0]_i_1__19_n_0         | BTN_IBUF[0]                  |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[3].rc/sample_ticks[0]_i_1__19_n_0  |                              |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG | inst/l_counters[4].rc/count[0]_i_1__18_n_0         | BTN_IBUF[0]                  |                8 |             32 |         4.00 |
+|  CLK_100MHZ_IBUF_BUFG |                                                    |                              |               51 |             71 |         1.39 |
++-----------------------+----------------------------------------------------+------------------------------+------------------+----------------+--------------+
 
 

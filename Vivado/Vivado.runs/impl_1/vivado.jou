@@ -1,24 +1,24 @@
 #-----------------------------------------------------------
-# Vivado v2024.2 (64-bit)
-# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
-# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
-# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Wed Nov 26 13:37:44 2025
-# Process ID         : 10948
-# Current directory  : C:/Users/gsfei/OneDrive/Desktop/Weak-RoPUF/Vivado/Vivado.runs/impl_1
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Mon Dec  8 17:16:44 2025
+# Process ID         : 21136
+# Current directory  : D:/Github/Weak-RoPUF/Vivado/Vivado.runs/impl_1
 # Command line       : vivado.exe -log top_level.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source top_level.tcl -notrace
-# Log file           : C:/Users/gsfei/OneDrive/Desktop/Weak-RoPUF/Vivado/Vivado.runs/impl_1/top_level.vdi
-# Journal file       : C:/Users/gsfei/OneDrive/Desktop/Weak-RoPUF/Vivado/Vivado.runs/impl_1\vivado.jou
-# Running On         : geo
+# Log file           : D:/Github/Weak-RoPUF/Vivado/Vivado.runs/impl_1/top_level.vdi
+# Journal file       : D:/Github/Weak-RoPUF/Vivado/Vivado.runs/impl_1\vivado.jou
+# Running On         : DESKTOP-VG1816S
 # Platform           : Windows Server 2016 or Windows 10
-# Operating System   : 26200
-# Processor Detail   : AMD Ryzen AI 9 HX 375 w/ Radeon 890M           
-# CPU Frequency      : 1996 MHz
-# CPU Physical cores : 12
-# CPU Logical cores  : 24
-# Host memory        : 33620 MB
+# Operating System   : 22631
+# Processor Detail   : AMD Ryzen 7 7800X3D 8-Core Processor           
+# CPU Frequency      : 4200 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 33482 MB
 # Swap memory        : 2147 MB
-# Total Virtual      : 35768 MB
-# Available Virtual  : 10672 MB
+# Total Virtual      : 35630 MB
+# Available Virtual  : 16910 MB
 #-----------------------------------------------------------
 source top_level.tcl -notrace

@@ -1,15 +1,17 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"0.8",
-   "Default View_TopLeft":"-821,-319",
+   "Default View_ScaleFactor":"1.0",
+   "Default View_TopLeft":"-522,-728",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0
 #  -string -flagsOSRD
-levelinfo -pg 1 0 190 400
-pagesize -pg 1 -db -bbox -sgen 0 -140 510 200
+preplace port uart_rtl_0 -pg 1 -lvl 2 -x 470 -y 20 -defaultsOSRD
+preplace inst axi_uartlite_0 -pg 1 -lvl 1 -x 340 -y -300 -defaultsOSRD
+preplace netloc axi_uartlite_0_UART 1 1 1 450 -310n
+levelinfo -pg 1 -180 340 470
+pagesize -pg 1 -db -bbox -sgen -180 -670 580 160
 "
 }
 {
-   "da_mb_cnt":"1",
-   "da_ps7_cnt":"1"
+   "da_board_cnt":"2"
 }

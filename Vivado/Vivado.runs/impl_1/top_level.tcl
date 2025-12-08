@@ -1,5 +1,5 @@
 namespace eval ::optrace {
-  variable script "C:/Users/gsfei/OneDrive/Desktop/Weak-RoPUF/Vivado/Vivado.runs/impl_1/top_level.tcl"
+  variable script "D:/Github/Weak-RoPUF/Vivado/Vivado.runs/impl_1/top_level.tcl"
   variable category "vivado_impl"
 }
 
@@ -97,6 +97,9 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
+set_msg_config  -id {Labtoolstcl 44-513}  -string {{ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/887404240554A}}  -suppress 
+set_msg_config  -id {Common 17-165}  -string {{ERROR: [Common 17-165] Too many positional options when parsing 'sort', please type 'get_cells -help' for usage info.}}  -suppress 
+set_msg_config  -id {Common 17-53}  -string {{ERROR: [Common 17-53] User Exception: No open design. Please open an elaborated, synthesized or implemented design before executing this command.}}  -suppress 
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Write Bitstream" START { ROLLUP_AUTO }
@@ -105,10 +108,12 @@ start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
-  set_param chipscope.maxJobs 6
-  set_param runs.launchOptions { -jobs 24  }
+  set_param chipscope.maxJobs 4
+  set_param general.usePosixSpawnForFork 1
+  set_param xicom.use_bs_reader 1
+  set_param runs.launchOptions { -jobs 8  }
   open_checkpoint top_level_routed.dcp
-  set_property webtalk.parent_dir C:/Users/gsfei/OneDrive/Desktop/Weak-RoPUF/Vivado/Vivado.cache/wt [current_project]
+  set_property webtalk.parent_dir D:/Github/Weak-RoPUF/Vivado/Vivado.cache/wt [current_project]
 set_property TOP top_level [current_fileset]
 OPTRACE "read constraints: write_bitstream" START { }
 OPTRACE "read constraints: write_bitstream" END { }
